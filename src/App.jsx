@@ -4,6 +4,8 @@ import './App.css';
 import AnalysisForm from './components/AnalysisForm';
 import AnalysisList from './components/AnalysisList';
 
+const API_BASE_URL = 'https://fsai-ft9d.onrender.com/api';
+
 function App() {
   const [analyses, setAnalyses] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -15,7 +17,7 @@ function App() {
   const fetchAnalyses = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('/api/analyses');
+      const response = await axios.get(`${API_BASE_URL}/analyses`);
       setAnalyses(response.data.data);
     } catch (error) {
       console.error('Error fetching analyses:', error);
@@ -26,7 +28,7 @@ function App() {
 
   const handleAnalyzeText = async (text) => {
     try {
-      const response = await axios.post('/api/analyze', { text });
+      const response = await axios.post(`${API_BASE_URL}/analyze`, { text });
       setAnalyses([response.data.data, ...analyses]);
     } catch (error) {
       console.error('Error analyzing text:', error);
@@ -35,7 +37,7 @@ function App() {
 
   const handleDeleteAnalysis = async (id) => {
     try {
-      await axios.delete(`/api/analyses/${id}`);
+      await axios.delete(`${API_BASE_URL}/analyses/${id}`);
       setAnalyses(analyses.filter((analysis) => analysis._id !== id));
     } catch (error) {
       console.error('Error deleting analysis:', error);
