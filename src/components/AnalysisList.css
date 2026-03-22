@@ -1,0 +1,103 @@
+.analyses-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.analyses-container h2 {
+  margin-top: 0;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.analyses-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.analysis-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  transition: all 0.3s;
+}
+
+.analysis-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.analysis-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.sentiment-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.sentiment-positive {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.sentiment-negative {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.sentiment-neutral {
+  background-color: #e7e7e7;
+  color: #333;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #dc3545;
+  padding: 0;
+  line-height: 1;
+}
+
+.delete-btn:hover {
+  color: #c82333;
+}
+
+.analysis-text {
+  margin: 0 0 1rem 0;
+  color: #555;
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+.analysis-details {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.analysis-details .detail {
+  color: #666;
+}
+
+.analysis-date {
+  color: #999;
+  font-size: 0.85rem;
+}
+
+.loading,
+.no-data {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-size: 1.1rem;
+}
